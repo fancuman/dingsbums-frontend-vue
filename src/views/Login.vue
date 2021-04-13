@@ -66,7 +66,6 @@ export default {
     snackbar: false,
     timeout: 2000,
   }),
-
   methods: {
     ...mapActions(["login"]),
     validate() {
@@ -80,10 +79,8 @@ export default {
         });
         console.log("result:", result);
 
-        if (result.code == 0) 
-          this.hinttext="Login failed!"
-        else
-          this.hinttext="Login success!"
+        if (result.code == 0) this.hinttext = "Login failed!";
+        else this.hinttext = "Login success!";
         this.snackbar = true;
       } catch (error) {
         console.log("error:", error);
