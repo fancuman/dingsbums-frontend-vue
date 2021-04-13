@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link v-if="!isLogin" to="/login">Login</router-link>
       <a class="logout" v-else @click="logout">Logout</a> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/Itemmap">Item</router-link>
     </div>
     <router-view />
   </v-app>
