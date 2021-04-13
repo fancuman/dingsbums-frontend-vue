@@ -3,7 +3,7 @@ import axios from 'axios'
 const post = async (url, data) => {
   try {
     const result = await axios.post(url, data);
-    return { code: 1, ...result };
+    return { code: 1, ...result.data };
   } catch (error) {
     if (error.response) {
       // Request made and server responded

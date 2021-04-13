@@ -10,9 +10,9 @@ export default {
     }
   },
   actions: {
-    login: function ({ commit }, user) {
+    login: async function ({ commit }, user) {
       // 登录请求
-      const res = us.login(user);
+      const res = await us.login(user);
       const { code, token } = res;
       if (code) {
         // 登录成功
