@@ -11,6 +11,7 @@ module.exports = {
           pathRewrite: { '^/api': '' }
         }
       },
+      host: 'localhost', //only localhost can access the website, 0.0.0.0 can be configured to allow anyone
     }
   }
 }
