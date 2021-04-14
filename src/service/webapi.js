@@ -26,7 +26,7 @@ const post = async (url, data) => {
 const get = async (url) => {
   try {
     const result = await axios.get(url);
-    return { code: 1, ...result.data };
+    return { code: 1, data: result.data };
   } catch (error) {
     if (error.response) {
       // Request made and server responded

@@ -5,7 +5,9 @@
       <router-link v-if="!isLogin" to="/login">Login</router-link>
       <a class="logout" v-else @click="logout">Logout</a> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/Itemmap">Item</router-link>
+      <router-link to="/itemmap">Item</router-link> |
+      <router-link to="/itemlist">ItemList</router-link>
+      <router-link v-if="isLogin" to="/itemedit"> | ItemEdit</router-link>
     </div>
     <router-view />
   </v-app>

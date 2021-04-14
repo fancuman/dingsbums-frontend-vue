@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1>ItemList</h1>
+    <h3>{{ title }}</h3>
+    <p>{{ desc }}</p>
   </div>
 </template>
 
 <script>
 export default {
-
-}
+  props: ["title", "desc"],
+};
 </script>
 
 <style>
-
 </style>

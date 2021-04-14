@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Itemmap from '../views/Itemmap.vue'
+import ItemList from '../views/ItemList.vue'
+import ItemEdit from '../views/ItemEdit.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,16 @@ const routes = [
     path: '/itemmap',
     name: 'Itemmap',
     component: Itemmap
+  },
+  {
+    path: '/itemlist',
+    name: 'ItemList',
+    component: ItemList
+  },
+  {
+    path: '/itemedit',
+    name: 'ItemEdit',
+    component: ItemEdit
   },
   {
     path: '/about',

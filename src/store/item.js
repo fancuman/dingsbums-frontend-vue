@@ -19,6 +19,9 @@ export default {
         commit("createItem", item);
       }
       return res;
+    },
+    getAll: async function ({ commit }, item) { 
+      
     }
   }
 };
