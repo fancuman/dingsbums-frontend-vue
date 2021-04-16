@@ -13,6 +13,8 @@
         label="Description"
         required
       ></v-text-field>
+      <v-text-field v-model="lat" label="Latitude" required></v-text-field>
+      <v-text-field v-model="log" label="Longitude" required></v-text-field>
       <v-btn :disabled="!valid" color="success" class="mr-4" @click="addHandle">
         AddItem
       </v-btn>
@@ -31,7 +33,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import is from "@/service/item";
 export default {
   data: () => ({
     valid: true,
@@ -41,14 +43,17 @@ export default {
     hinttext: "",
     snackbar: false,
     timeout: 2000,
+    lat: -33.807602,
+    log: 151.190196,
   }),
   methods: {
-    ...mapActions(["create"]),
-    createHandle: async function () {
+    // ...mapActions(["create"]),
+    addHandle: async function () {
       try {
-        const result = await this.create({
+        const result = await is.create({
           name: this.name,
           description: this.description,
+          coordinates: { log: this.log, lat: this.lat },
         });
         console.log("result:", result);
 
@@ -62,6 +67,14 @@ export default {
     reset() {
       this.$refs.form.reset();
     },
+  },
+  mounted: async function () {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
+    }
   },
 };
 </script>
